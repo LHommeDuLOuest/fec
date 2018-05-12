@@ -2,14 +2,15 @@
 */logs
 /bin$
 */tmp
-.metadata
-.settings/
+*.metadata
+**/.settings/
 *~
 *.idea
 *.iml
 */*.iml
 
 # Eclipse Core
+.project
 *.project
 
 # Locally stored "Eclipse launch configurations"
