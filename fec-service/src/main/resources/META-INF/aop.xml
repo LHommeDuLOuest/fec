@@ -1,0 +1,20 @@
+<!DOCTYPE aspectj PUBLIC
+        "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<aspectj>
+
+    <weaver options="-verbose -showWeaveInfo">
+
+        <!-- only weave classes in our application-specific packages -->
+        <include within="fr.atos.rennes.service.fec.rules.*"/>
+
+    </weaver>
+
+    <aspects>
+
+        <!-- weave in just this aspect -->        
+        <aspect name="fr.atos.rennes.service.aspect.AspectRule"/>
+        <!--aspect name="fr.atos.rennes.service.aspect.TimeAspect"/-->
+
+    </aspects>
+
+  </aspectj>
