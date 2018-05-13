@@ -18,7 +18,7 @@ import fr.bzh.rzh.service.aspect.AspectRule;
 @EnableLoadTimeWeaving(aspectjWeaving = AspectJWeaving.ENABLED)
 @Component
 @Configuration
-@ComponentScan({"fr.atos.rennes.service.fec" , "fr.atos.rennes.service.aspect" , "fr.atos.rennes.repository.fec"})
+@ComponentScan({"fr.bzh.rzh.service.fec" , "fr.bzh.rzh.service.aspect" , "fr.bzh.rzh.repository.fec"})
 public class AppConfig {
 	
 	@Bean

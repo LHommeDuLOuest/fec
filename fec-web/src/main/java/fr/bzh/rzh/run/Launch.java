@@ -14,7 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 
 @SpringBootApplication
-@ComponentScan({"fr.atos.rennes.web.conf"})
+@ComponentScan({"fr.bzh.rzh.web.conf"})
 public class Launch {
 	
 	public static void main(String[] args) {

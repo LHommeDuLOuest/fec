@@ -29,7 +29,7 @@ import fr.bzh.rzh.service.aspect.IArhb;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan({"fr.atos.rennes.web.*", "fr.atos.rennes.service.conf"})
+@ComponentScan({"fr.bzh.rzh.web.*", "fr.bzh.rzh.service.conf"})
 public class DispatcherConf extends WebMvcConfigurerAdapter {
 	
 	private static final Log logger = LogFactory.getLog(DispatcherConf.class);

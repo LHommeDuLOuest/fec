@@ -42,7 +42,7 @@ import fr.bzh.rzh.repository.fec.ScalaFecRepo;
  */
 @SuppressWarnings("serial")
 @Repository
-@ComponentScan("fr.atos.rennes.repository.conf")
+@ComponentScan("fr.bzh.rzh.repository.conf")
 @Scope("prototype")
 public class FecRepoImpl implements IFecRepo {
 	
