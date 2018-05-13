@@ -5,15 +5,15 @@
     <weaver options="-verbose -showWeaveInfo">
 
         <!-- only weave classes in our application-specific packages -->
-        <include within="fr.atos.rennes.service.fec.rules.*"/>
+        <include within="fr.bzh.rzh.service.fec.rules.*"/>
 
     </weaver>
 
     <aspects>
 
         <!-- weave in just this aspect -->        
-        <aspect name="fr.atos.rennes.service.aspect.AspectRule"/>
-        <!--aspect name="fr.atos.rennes.service.aspect.TimeAspect"/-->
+        <aspect name="fr.bzh.rzh.service.aspect.AspectRule"/>
+        <!--aspect name="fr.bzh.rzh.service.aspect.TimeAspect"/-->
 
     </aspects>
 
