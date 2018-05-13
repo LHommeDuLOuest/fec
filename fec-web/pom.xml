@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<parent>
+		<groupId>fr.bzh.rzh.fec</groupId>
+		<artifactId>fec-parent</artifactId>
+		<version>0.0.1.RELEASE</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>fec-web</artifactId>
+	<packaging>jar</packaging>
+	<name>fec-web Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+		<!-- Log -->
+		<!-- SLF4J -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>jcl-over-slf4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>log4j-over-slf4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-classic</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>jcl-over-slf4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>log4j-over-slf4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-classic</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<!-- try without fr.bzh.rzh.fec:fec-core -->
+		<dependency>
+			<groupId>fr.bzh.rzh.fec</groupId>
+			<artifactId>fec-core</artifactId>
+			<version>${parent.version}</version>
+			<type>jar</type>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>fr.bzh.rzh.fec</groupId>
+			<artifactId>fec-service</artifactId>
+			<version>${parent.version}</version>
+			<type>jar</type>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-context</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>jcl-over-slf4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!--
+		<dependency>
+			<groupId>fr.bzh.rzh.fec</groupId>
+			<artifactId>fec-front</artifactId>
+			<version>${parent.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		-->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.5</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<!-- <build> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+		<artifactId>maven-shade-plugin</artifactId> <version>3.0.0</version> <dependencies> 
+		<dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
+		<version>1.5.1.RELEASE</version> </dependency> </dependencies> <configuration> 
+		<keepDependenciesWithProvidedScope>false</keepDependenciesWithProvidedScope> 
+		<createDependencyReducedPom>false</createDependencyReducedPom> <filters> 
+		<filter> <artifact>*:*</artifact> <excludes> <exclude>META-INF/*.SF</exclude> 
+		<exclude>META-INF/*.DSA</exclude> <exclude>META-INF/*.RSA</exclude> </excludes> 
+		</filter> </filters> <transformers> <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer"> 
+		<resource>META-INF/spring.handlers</resource> </transformer> <transformer 
+		implementation="org.springframework.boot.maven.PropertiesMergingResourceTransformer"> 
+		<resource>META-INF/spring.factories</resource> </transformer> <transformer 
+		implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer"> 
+		<resource>META-INF/spring.schemas</resource> </transformer> <transformer 
+		implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" 
+		/> <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"> 
+		<mainClass>fr.atos.rennes.run.Launch</mainClass> </transformer> </transformers> 
+		</configuration> <executions> <execution> <phase>package</phase> <goals> 
+		<goal>shade</goal> </goals> </execution> </executions> </plugin> </plugins> 
+		</build> -->
+
+
+	<profiles>
+		<profile>
+			<id>time</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+				<property>
+					<name>springProfiles</name>
+					<value>time</value>
+				</property>
+			</activation>
+		</profile>
+		<profile>
+			<id>exception</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+				<property>
+					<name>springProfiles</name>
+					<value>exception</value>
+				</property>
+			</activation>
+		</profile>
+		<profile>
+			<id>fecwar</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.tomcat.maven</groupId>
+						<artifactId>tomcat7-maven-plugin</artifactId>
+						<version>2.2</version>
+						<configuration>
+							<url>http://localhost:8081/manager/text</url>
+							<server>theServer</server>
+							<path>/fec</path>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+
+</project>
