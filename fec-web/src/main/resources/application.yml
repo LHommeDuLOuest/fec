@@ -1,2 +1,22 @@
 server:
   port: 8888
+  
+#management endpoints on a separate port
+management:
+  address: 127.0.0.1 #CIDR allowed to hit actuator
+  port: 8889
+  security:
+    enabled: false # management port is internal only. no need to secure it. 
+
+#default project info followed by actual injected pom-specified values.
+project:
+  name: fec
+  version: 0.0.1
+  description: fec description
+  
+info:
+  build:
+    artifact: ${project.artifactId}
+    name: ${project.name}
+    description: ${project.description}
+    version: ${project.version}
